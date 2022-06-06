@@ -50,18 +50,26 @@
                         </button>
                     </div>
                 </div>
-                <a class="btn btn-success btn-sm ml-3" href="cart.jsp">
+                <a class="btn btn-success btn-sm ml-3" href="menuToCart2?id=${sessionScope.acc.id}">
                     <i class="fa fa-shopping-cart"></i> Cart
-                    <span class="badge badge-light">3</span>
+                    <!--<span class="badge badge-light">3</span>-->
                 </a>
             </form>
         </div>
     </div>
 </nav>
-<section class="jumbotron text-center">
+<section style="margin-bottom: 0px" class="jumbotron text-center">
     <div class="container">
         <h1 class="jumbotron-heading">Cửa hàng điện thoại chất lượng cao</h1>
         <p class="lead text-muted mb-0">Uy tín tạo nên thương hiệu</p>
     </div>
 </section>
+                    
+<!--<script>
+    function run(t){
+        alert(t);   
+    }
+</script>-->
+<!--<script src="js/giohang3.js"></script>-->
+
 <!--end of menu-->

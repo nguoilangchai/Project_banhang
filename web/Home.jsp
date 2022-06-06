@@ -11,6 +11,12 @@
         <!------ Include the above in your HEAD tag ---------->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
+
+        <style>
+            .hide {
+                display: none;
+            }
+        </style>
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
@@ -31,25 +37,36 @@
                 <div class="row">
                 <jsp:include page="Left.jsp"></jsp:include>
 
-                <div class="col-sm-9">
-                    <div class="row">
+                    <div class="col-sm-9">
+                        <div class="row">
                         <c:forEach items="${listP}" var="o">
                             <div class="col-12 col-md-6 col-lg-4">
                                 <div class="card">
+                                    <h1 class="hide">${o.id}</h1>
+                                    <h2 class="hide">${sessionScope.acc.getId()}</h2>
                                     <img class="card-img-top" src="${o.image}" alt="Card image cap">
                                     <div class="card-body">
-                                        <h4 class="card-title show_txt"><a href="detail?tempPid=${o.id}" title="View Product">${o.name}</a></h4>
+                                        <h4 class="card-title show_txt"><a href="detail?tempPid=${o.id}" title="View Product"><h4>${o.name}</h4> </a></h4>
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
-                                            <div class="col">
-                                                <p class="btn btn-danger btn-block">${o.price} $</p>
-                                            </div>
-                                            <div class="col">
-                                                <!--<a href="cart.jsp" class="btn btn-success btn-block">Add to cart</a>-->
-                                                <button class="btn btn-success btn-block" onclick="test()">Add to cart</button>
-                                            </div>
+                                            <p>
+                                                <span class="btn btn-danger">${o.price}</span>
+                                            </p>
+                                            <h3>$</h3>
+
                                         </div>
                                     </div>
+                                    <!--<button class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>-->
+                                    <c:if test="${sessionScope.acc == null}">
+                                        <a href="Login.jsp">
+                                            <button class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>
+                                        </a>
+                                    </c:if>
+
+                                    <c:if test="${sessionScope.acc != null}">
+                                        <button class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>
+                                    </c:if>
+                                    
                                 </div>
                             </div>
                         </c:forEach>
@@ -60,7 +77,8 @@
         </div>
 
         <jsp:include page="Footer.jsp"></jsp:include>
-        <script src="js/giohang.js"></script>
+        <script src="js/luuTruGiohang3.js"></script>
+        <!--<script src="js/luuTruGiohang2.js"></script>-->
     </body>
 </html>
 
