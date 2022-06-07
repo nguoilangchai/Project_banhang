@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="manageProduct">Manager Product</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="managerSale">Manager Sale</a>
+                    </li>
                 </c:if>
                     
                 <%--</c:if>--%>

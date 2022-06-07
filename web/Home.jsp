@@ -50,7 +50,7 @@
                                         <p class="card-text show_txt">${o.title}</p>
                                         <div class="row">
                                             <p>
-                                                <span class="btn btn-danger">${o.price}</span>
+                                                <span style="margin-left:80px" class="btn btn-danger">${o.price}</span>
                                             </p>
                                             <h3>$</h3>
 

@@ -1,8 +1,13 @@
+package control;
+
 import dao.DAO;
 import entity.Account;
-import entity.UserInfo;
+import entity.Category;
+import entity.Product;
+import entity.ThongTinGiaoDich;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,30 +15,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(urlPatterns = {"/checkout"})
-public class Checkout extends HttpServlet {
+@WebServlet(name = "ManagerSale", urlPatterns = {"/managerSale"})
+public class ManagerSale extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession();//goi session
+ 
+        HttpSession session = request.getSession();
         Account a = (Account) session.getAttribute("acc");
+        String tempUserID = "" + a.getId();
         
-        if(a==null)
-            response.sendRedirect("checkout.jsp");
-        else
-        {
-            int id = a.getId();
-            request.setAttribute("id", id);
-            DAO dao = new DAO();
-            UserInfo userInfo = dao.getUserInfoByID(id);
-            if (userInfo != null) {
-                String ok = request.getParameter("ok");
-                request.setAttribute("userInfo", userInfo);
-                request.setAttribute("ok", ok);
-                request.getRequestDispatcher("checkout.jsp").forward(request, response);
-            }
-        }
+        DAO dao = new DAO();
+        List<ThongTinGiaoDich> list = dao.getInfoSaleByIDProduct(tempUserID);
+        
+        request.setAttribute("listSales", list);
+//        
+//       List<Category> listC = dao.getAllCategory();
+//       request.setAttribute("listCC", listC);
+       
+        request.getRequestDispatcher("ManagerSale.jsp").forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

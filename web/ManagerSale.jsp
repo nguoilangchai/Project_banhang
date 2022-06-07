@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -27,10 +26,10 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Manage <b>Product</b></h2>
+                            <h2>Manage <b>Sale</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Product</span></a>
+                            <!--<a href="#addEmployeeModal"  class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Account</span></a>-->
                             <!--<a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>-->						
                         </div>
                     </div>
@@ -44,16 +43,18 @@
                                     <label for="selectAll"></label>
                                 </span>
                             </th>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Image</th>
+                            <th>Day</th>
+                            <th>ID user</th>
+                            <th>FullName</th>
+                            <th>ID product</th>
+                            <th>Name product</th>
+                            <th>Quantity</th>
                             <th>Price</th>
-                            <th>Actions</th>
+                            <th>Money</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <div class="text-danger">${mess}</div>
-                        <c:forEach items="${listP}" var="o">
+                    <tbody>                        
+                        <c:forEach items="${listSales}" var="o">
                             <tr>
                                 <td>
                                     <span class="custom-checkbox">
@@ -61,16 +62,20 @@
                                         <label for="checkbox1"></label>
                                     </span>
                                 </td>
-                                <td>${o.id}</td>
-                                <td>${o.name}</td>
-                                <td>
-                                    <img src="${o.image}">
+                                
+                                <td>${o.ngay}</td>
+                                <td>${o.userID}</td>
+                                <td>${o.fullName}</td>
+                                <td>${o.idSanPham}</td>
+                                <td>${o.nameProduct}</td>
+                                <td>${o.soLuong}</td>
+                                <td>${o.price}</td>
+                                <td>${o.money}</td>
+                                
+                                <td>                                   
+                                    <a href="deleteItem?pid=${o.idSanPham}&userID=${o.userID}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
-                                <td>${o.price} $</td>
-                                <td>
-                                    <a href="edit?pid=${o.id}"  class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="delete?pid=${o.id}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                </td>
+                                
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -95,39 +100,29 @@
         <div id="addEmployeeModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form action="add" method="post">
+                    <form action="addAccount" method="post">
                         <div class="modal-header">						
-                            <h4 class="modal-title">Add Product</h4>
+                            <h4 class="modal-title">Add Account</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">					
                             <div class="form-group">
-                                <label>Name</label>
-                                <input name="name" type="text" class="form-control" required>
+                                <label>User name</label>
+                                <input name="user" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Image</label>
-                                <input name="image" type="text" class="form-control" required>
+                                <label>Pass word</label>
+                                <input name="pass" type="text" class="form-control" required>
                             </div>
+                            
+                 
                             <div class="form-group">
-                                <label>Price</label>
-                                <input name="price" type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Title</label>
-                                <textarea name="title" class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select name="category" class="form-select" aria-label="Default select example">
+                                <label>Roles</label>
+                                <select name="account" class="form-select" aria-label="Default select example">
                                     <c:forEach items="${listCC}" var="o">
-                                        <option value="${o.cid}">${o.cname}</option>
+                                        <option value="${o.id}">${o.rName}</option>
                                     </c:forEach>
-                                </select>
+                                </select> 
                             </div>
 
                         </div>

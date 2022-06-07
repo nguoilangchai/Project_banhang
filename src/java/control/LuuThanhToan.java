@@ -1,5 +1,6 @@
 package control;
 
+import dao.DAO;
 import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,10 +21,27 @@ public class LuuThanhToan extends HttpServlet {
         Account a = (Account) session.getAttribute("acc");
         
         int id = a.getId();
-        String tenSP = request.getParameter("tenSP");
-        request.setAttribute("id", id);
-        request.setAttribute("tenSP", tenSP);
+        String dsIDItem = request.getParameter("danhSachIDItem");
+        String dsSoLuongItem = request.getParameter("danhSachSoluongItem");
         
+        String strDSItem[] = dsIDItem.split(",");
+        String strDSSoLuongItem[] = dsSoLuongItem.split(",");
+        
+        int size = strDSItem.length;
+        
+        DAO dao = new DAO();
+        String ngay = dao.traVeNgay();
+        for (int i = 0; i < size; i++) {
+            
+            int idSP = Integer.parseInt(strDSItem[i]);
+            int soLuong = Integer.parseInt(strDSSoLuongItem[i]);
+            dao.insertNewItemGioHang(id, idSP, soLuong, ngay);           
+        }
+        
+//        request.setAttribute("id", id);
+//        request.setAttribute("dsIDItem", dsIDItem);
+//        request.setAttribute("dsSoLuongItem", dsSoLuongItem);
+//        
         request.getRequestDispatcher("inThongTinMuaHang.jsp").forward(request, response);
     }
 

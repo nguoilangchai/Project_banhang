@@ -27,10 +27,16 @@
     <section class="payment-form dark">
       <div class="container">
         <div class="block-heading">
-          <h2>Payment</h2>
+          <h2>Payment</h2>         
         </div>
         <form action="luuThanhToan" method="post">
           <h1 id="duyNhat" class="hide">${id}</h1>
+        
+        
+        <input class="hide" id="chuaDuLieuIdSanPham" name="danhSachIDItem" type="text">
+        <input class="hide" id="chuaDuLieuSoLuongItem" name="danhSachSoluongItem" type="text">
+       
+        
           <div class="products" id="danhSachItem">
               
           </div>
@@ -40,18 +46,18 @@
             <div class="row">
               <div class="form-group col-sm-7">
                 <label for="card-holder">Tên</label>
-                <input id="card-holder" type="text" value="${userInfo.fullName}" class="form-control" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1">
+                <input id="card-holder" type="text" value="${userInfo.fullName}" class="form-control" placeholder="Nhập tên" aria-label="Card Holder" aria-describedby="basic-addon1">
               </div>
               <div class="form-group col-sm-7">
                 <label for="card-holder">Địa chỉ</label>
-                <input id="card-holder" type="text" class="form-control" value="${userInfo.address}" placeholder="Card Holder" aria-label="Card Holder" aria-describedby="basic-addon1">
+                <input id="card-holder" type="text" class="form-control" value="${userInfo.address}" placeholder="Nhập địa chỉ" aria-label="Card Holder" aria-describedby="basic-addon1">
               </div>
               <div class="form-group col-sm-8">
                 <label for="card-number">Số điện thoại</label>
-                <input id="card-number" type="text" value="${userInfo.mobile}" class="form-control" placeholder="Card Number" aria-label="Card Holder" aria-describedby="basic-addon1">
+                <input id="card-number" type="text" value="${userInfo.mobile}" class="form-control" placeholder="Nhập số điện thoại" aria-label="Card Holder" aria-describedby="basic-addon1">
               </div>
               <div class="form-group col-sm-12">
-                <button type="submit" class="btn btn-primary btn-block">Thanh toán</button>
+                <button type="submit" class="btn btn-primary btn-block" onclick="xoaItem()">Thanh toán</button>
               </div>
             </div>
           </div>
@@ -65,7 +71,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!--<script src="js/giohang.js"></script>-->
-<script src="js/checkout2.js"></script>
+<script src="js/checkout.js"></script>
 
 </body>
 </html>

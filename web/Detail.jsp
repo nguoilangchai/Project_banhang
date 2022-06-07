@@ -82,14 +82,14 @@
                                         <div class="row">
                                             <div class="col-sm-5">
                                                 <dl class="param param-inline">
-                                                    <dt>Quantity: </dt>
-                                                    <dd>
+                                                    <!--<dt>Quantity: </dt>-->
+<!--                                                    <dd>
                                                         <select class="form-control form-control-sm" style="width:70px;">
                                                             <option> 1 </option>
                                                             <option> 2 </option>
                                                             <option> 3 </option>
                                                         </select>
-                                                    </dd>
+                                                    </dd>-->
                                                 </dl>  <!-- item-property .// -->
                                             </div> <!-- col.// -->
 
@@ -97,12 +97,12 @@
                                         <hr>
                                         <!--<a href="#" class="btn btn-lg btn-primary text-uppercase"> Buy now </a>-->
 
-                                        <input type="button" class="btn btn-lg btn-primary text-uppercase" value="Buy now" onclick="test()">
+<!--                                        <input type="button" class="btn btn-lg btn-primary text-uppercase" value="Buy now" onclick="test()">
 
-                                        <a href="cart.jsp" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>
+                                        <a href="cart.jsp" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Add to cart </a>-->
                                         <!-- test -->
-                                        <input type="button" value="Click me" onclick="test1()">
-                                        <input type="text" id="tenSanPham" value = ${detail.price}>
+                                        
+                 
                                         <!--<input type="text" id="tenSanPham">-->
                                         
                                     </article> <!-- card-body.// -->
