@@ -38,7 +38,9 @@ public class SignUpControl extends HttpServlet {
                     dao.insertIdUser(x);
                 
                     
-                request.getRequestDispatcher("home").forward(request, response);
+//                request.getRequestDispatcher("home").forward(request, response);
+                request.setAttribute("mess", "Sign up successful ");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
             }
             else{
                 request.setAttribute("mess", "Sign up Faild!!! User already exists ");

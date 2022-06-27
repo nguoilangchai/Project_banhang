@@ -1,41 +1,36 @@
+
 package control;
 
 import dao.DAO;
-import entity.Category;
-import entity.Product;
+import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "DetailControl", urlPatterns = {"/detail"})
-public class DetailControl extends HttpServlet {
+@WebServlet(name = "updatePass", urlPatterns = {"/updatePass"})
+public class updatePass extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        //lấy được id của Product từ trang Home.jsp
-        String id = request.getParameter("tempPid");
+
+        HttpSession session = request.getSession();//goi session
+        Account a = (Account) session.getAttribute("acc");
+         
+        int id = a.getId();
+       
+        String newPass = request.getParameter("newPass");
         
         DAO dao = new DAO();
-        Product p = dao.getProductByID(id);
+        dao.updateNewPass(newPass, id);
         
-        //lấy danh sách các CATEGORIES trong SQL
-        List<Category> listC = dao.getAllCategory();
-        request.setAttribute("listCC", listC);//đẩy vào listC vào chổ listCC trên Home.jsp
-        
-        //lấy 1 sản phẩm cuối cùng được thêm vào trong SQL
-        Product last = dao.getLast();
-        request.setAttribute("p", last);//đẩy last vào p trên Home.jsp
-        
-        request.setAttribute("detail", p);
-        request.setAttribute("pid", id);
-        
-        request.getRequestDispatcher("Detail.jsp").forward(request, response);
+        request.setAttribute("mess", "Login again !!!"); 
+        request.getRequestDispatcher("Login.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

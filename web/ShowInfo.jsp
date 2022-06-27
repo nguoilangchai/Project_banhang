@@ -47,8 +47,9 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <h6>Username: ${sessionScope.acc.getUser()}</h6>
-                                        <h6>Password :  ${sessionScope.acc.getPass()}</h6>
+                                        <h6>Password :  ${sessionScope.acc.getPass()}</h6>                       
                                     </div>
+                                    <a href="updatePassword.jsp">Change password</a>
                                     <div class="clearfix"></div>
                                     <hr style="margin:5px 0 5px 0;">
 

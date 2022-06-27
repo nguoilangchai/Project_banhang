@@ -387,6 +387,19 @@ public class DAO {
         }
     }
 
+    public void updateNewPass(String newPass, int id) {
+        String query = "UPDATE Account SET pass=? WHERE userID = ?";
+        
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, newPass);
+            ps.setInt(2, id);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+        }
+    }
+    
     public void insertIdUser(int id) {
         String query = "INSERT INTO InfoUser(idUser) VALUES (?)";
 
@@ -565,12 +578,15 @@ public class DAO {
 //            String x = dao.getUserInfoByID(13).toString();
 //            System.out.println(x);
 
-        List<ThongTinGiaoDich> list = dao.getInfoSaleByIDProduct("13");
-        for (ThongTinGiaoDich x : list) {
-            System.out.println(x.toString());
-        }
+//        List<ThongTinGiaoDich> list = dao.getInfoSaleByIDProduct("13");
+//        for (ThongTinGiaoDich x : list) {
+//            System.out.println(x.toString());
+//        }
 
 //            dao.deleteItem(id, tempPid);
+
+//        dao.updateNewPass("20", 36);
+        
 
     }
 

@@ -20,7 +20,7 @@
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
-            <div class="container">
+<!--            <div class="container">
                 <div class="row">
                     <div class="col">
                         <nav aria-label="breadcrumb">
@@ -32,7 +32,7 @@
                         </nav>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="container">
                 <div class="row">
                 <jsp:include page="Left.jsp"></jsp:include>
@@ -77,7 +77,7 @@
         </div>
 
         <jsp:include page="Footer.jsp"></jsp:include>
-        <script src="js/luuTruGiohang3.js"></script>
+        <script src="js/luuTruGiohang.js"></script>
         <!--<script src="js/luuTruGiohang2.js"></script>-->
     </body>
 </html>
