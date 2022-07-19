@@ -13,11 +13,11 @@ hienThiDanhSachItemGioHang();
 var nodeArrIdItem = document.getElementById('chuaDuLieuIdSanPham');
 var nodeArrSoLuongItem = document.getElementById('chuaDuLieuSoLuongItem');
 
-console.log(nodeArrIdItem);
-console.log(nodeArrSoLuongItem);
-
-console.log(arrID);
-console.log(arrSoLuong);
+//console.log(nodeArrIdItem);
+//console.log(nodeArrSoLuongItem);
+//
+//console.log(arrID);
+//console.log(arrSoLuong);
 
 //hienThiDanhSachItemGioHang();
 

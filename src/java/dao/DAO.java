@@ -375,6 +375,9 @@ public class DAO {
         if (aid == 3) {
             query = "UPDATE Account SET userName = ?, pass=?, isSell=1, isAdmin=1 WHERE userID = ?";
         }
+        if (aid == 4) {
+            query = "UPDATE Account SET userName = ?, pass=?, isSell=0, isAdmin=0 WHERE userID = ?";
+        }
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -445,6 +448,23 @@ public class DAO {
         }
     }
 
+    //update sau thanh toan
+    public void updateInfoUser2(int id, String fullName, String address, String mobile) {
+        String query = "UPDATE InfoUser SET fullName = ?, address = ?,\n"
+                + "mobile = ? WHERE idUser = ?";
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, fullName);
+            ps.setString(2, address);
+            ps.setString(3, mobile);
+            ps.setInt(4, id);
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+        }
+    }
+    
     public UserInfo getUserInfoByID(int id) {
         String query = "SELECT * FROM InfoUser WHERE idUser = ?";
         try {

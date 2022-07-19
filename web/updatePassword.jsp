@@ -44,7 +44,8 @@
                                             Enter your new password</h1>
                                         <h5>UserID : ${sessionScope.acc.getId()}</h5>
                                         <input name="newPass" type="text" id="user-name" class="form-control"
-                                               value="${sessionScope.acc.getPass()}" placeholder="Enter your new password" required="" autofocus="">
+                                               value="${sessionScope.acc.getPass()}" placeholder="Enter your new password" 
+                                               required="" autofocus="">
                                         <button class="btn btn-primary btn-block" type="submit"><i
                                                 class="fas fa-user-plus"></i> Save</button>
 

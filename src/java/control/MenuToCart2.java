@@ -25,7 +25,7 @@ public class MenuToCart2 extends HttpServlet {
             request.getRequestDispatcher("cart2.jsp").forward(request, response);
         } else {
             int id = a.getId();
-            request.setAttribute("id", id);//đẩy last vào p trên Home.jsp
+            request.setAttribute("id", id);
 
 //        String userIDGioHang = "userID"+id;
 //        request.setAttribute("userIDGioHang", userIDGioHang);  

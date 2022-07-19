@@ -95,14 +95,14 @@ function TinhTien(id) {
     var tempJson = JSON.stringify(danhSachItemGioHang);
 //        console.log(tempJson);
 
-    // 4. Lưu trữ danh sách sản phẩm xuống local storage
+    // Lưu trữ danh sách sản phẩm xuống local storage
     localStorage.setItem(userIDGioHang, tempJson);
     hienThiDanhSachItemGioHang();
 }
 
 function XoaItem(id) {
     var danhSachItemGioHang = layDanhSachItemGioHang();
-    var soLuongMua = document.getElementById(id).value;
+
 //    console.log(soLuongMua);
     for (var i = 0; i < danhSachItemGioHang.length; i++) {
         // Nếu tồn tại thì thay đổi số lượng 

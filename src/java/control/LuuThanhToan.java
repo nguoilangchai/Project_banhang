@@ -16,7 +16,8 @@ public class LuuThanhToan extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
+        request.setCharacterEncoding("UTF-8");
+        
         HttpSession session = request.getSession();//goi session
         Account a = (Account) session.getAttribute("acc");
         
@@ -38,6 +39,10 @@ public class LuuThanhToan extends HttpServlet {
             dao.insertNewItemGioHang(id, idSP, soLuong, ngay);           
         }
         
+        String fullName = request.getParameter("fullName");
+        String diaChi = request.getParameter("diaChi");
+        String sdt = request.getParameter("sdt");
+        dao.updateInfoUser2(id, fullName, diaChi, sdt);
 //        request.setAttribute("id", id);
 //        request.setAttribute("dsIDItem", dsIDItem);
 //        request.setAttribute("dsSoLuongItem", dsSoLuongItem);

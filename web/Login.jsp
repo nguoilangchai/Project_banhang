@@ -17,22 +17,27 @@
     </head>
     <body>
         <div id="logreg-forms">
+            
             <form class="form-signin" action="login" method="post">
-                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-                
+                <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>                
                 <div class="text-danger">${mess}</div>
-             
-                <input value="${cookie.user.value}" name="user"  type="text" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
-                <input value="${cookie.pass.value}" name="pass"  type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                
+                <input value="" name="user"  type="text" id="inputEmail" class="form-control" 
+                       placeholder="Username" required="" autofocus="">
+                <input value="" name="pass"  type="password" id="inputPassword" class="form-control" 
+                       placeholder="Password" required="">
 
                 <div class="form-group form-check">
-                    <input name="rem" value="ON" type="checkbox" ${(cookie.rem.value eq 'ON')?"checked":""} class="form-check-input" id="exampleCheck1">
+                    <input name="rem" value="ON" type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">Remember me</label>
                 </div>
 
-                <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                <button class="btn btn-success btn-block" type="submit">
+                    <i class="fas fa-sign-in-alt"></i> Sign in</button>
                 <hr>
-                <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+                <button class="btn btn-primary btn-block" type="button" id="btn-signup">
+                    <i class="fas fa-user-plus"></i> Sign up New Account
+                </button>
             </form>
 
             <form action="signup" method="post" class="form-signup">

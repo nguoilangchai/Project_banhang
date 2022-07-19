@@ -4,8 +4,11 @@
     <div class="card bg-light mb-3">
         <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
         <ul class="list-group category_block">
+            
             <c:forEach items="${listCC}" var="o">
-                <li class="list-group-item text-white ${o.cid == tag ? "active":""}"><a href="category?cid=${o.cid}">${o.cname}</a></li>
+                <li class="list-group-item text-white ${o.cid == tag ? "active":""}">
+                    <a href="category?cid=${o.cid}">${o.cname}</a>
+                </li>
             </c:forEach>
 
         </ul>

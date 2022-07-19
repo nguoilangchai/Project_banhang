@@ -40,6 +40,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
+                        
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -58,6 +59,7 @@
                             </tbody>
                         </table>
                     </div>
+                    
                 </div>
                 <div class="col mb-2">
                     <div class="row">

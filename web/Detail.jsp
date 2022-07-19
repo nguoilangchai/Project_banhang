@@ -16,32 +16,32 @@
             .hide {
                 display: none;
             }
-            
-            
+
+
         </style>
     </head>
     <body>
         <jsp:include page="Menu.jsp"></jsp:include>
-<!--            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="home">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Category</a></li>
-                                <li class="breadcrumb-item active" aria-current="#">Sub-category</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>-->
+            <!--            <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="home">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Category</a></li>
+                                            <li class="breadcrumb-item active" aria-current="#">Sub-category</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>-->
             <div class="container">
                 <div class="row">
                 <jsp:include page="Left.jsp"></jsp:include>
 
                     <div class="col-sm-9">
                         <div class="row" style="margin-top:20px">
-                        
+                            
                             <div class="col-6 col-md-6 col-lg-4">
                                 <div class="card">
                                     <h1 class="hide">${detail.id}</h1>
@@ -50,53 +50,49 @@
                                     <div class="card-body">
                                         <h4 class="card-title show_txt"><a href="detail?tempPid=${detail.id}" title="View Product"><h4>${o.name}</h4> </a></h4>
                                         <p class="card-text show_txt">${detail.title}</p>
-                                        
-                                    
-                                </div>
-                                        
-                            </div>
-                                        <c:if test="${sessionScope.acc == null}">
-                                        <a href="Login.jsp">
-                                            <button style="width:100%; margin-top: 10px" class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>
-                                        </a>
-                                    </c:if>
-                                 </div>
-                                             <div class="col-6 col-md-6 col-lg-4">
-                                
-                                        <dt >Description</dt>
-                                        <p id="mo-ta" style="margin-top:10px">
-                                                    ${detail.description}
-                                                </p>
-                                        <div class="row">
-                                            <p>
-                                                <span style="margin-left:80px" class="btn btn-danger">${detail.price}</span>
-                                            </p>
-                                            <h3>$</h3>
-
-                                        </div>
-                                            
                                     </div>
-                                            
-
-                                    <c:if test="${sessionScope.acc != null}">
-                                        <button style="width:66%;margin-top: 10px" class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>
-                                    </c:if>
-                                    <!--<button class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>-->
-                                    
-                                    
                                 </div>
+                            <c:if test="${sessionScope.acc == null}">
+                                <a href="Login.jsp">
+                                    <button style="width:100%; margin-top: 10px" class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>
+                                </a>
+                            </c:if>
+                                    
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-4">
+                            <dt >Description</dt>
+                            <p id="mo-ta" style="margin-top:10px">
+                                ${detail.description}
+                            </p>
+                            <div class="row">
+                                <p>
+                                    <span style="margin-left:80px" class="btn btn-danger">${detail.price}</span>
+                                </p>
+                                <h3>$</h3>
+
                             </div>
-                        
+                        </div>
+
+
+                        <c:if test="${sessionScope.acc != null}">
+                            <button style="width:66%;margin-top: 10px" class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>
+                        </c:if>
+                        <!--<button class="btn btn-success btn-block" id="add-to-cart"">Add to cart</button>-->
+
+
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <jsp:include page="Footer.jsp"></jsp:include>
-        <script src="js/luuTruGiohang.js"></script>
-        <!--<script src="js/luuTruGiohang2.js"></script>-->
-    </body>
+    </div>
+</div>
+
+<jsp:include page="Footer.jsp"></jsp:include>
+<script src="js/luuTruGiohang2.js"></script>
+<!--<script src="js/luuTruGiohang2.js"></script>-->
+</body>
 </html>
 
 

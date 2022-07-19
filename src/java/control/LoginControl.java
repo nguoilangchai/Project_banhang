@@ -39,25 +39,7 @@ public class LoginControl extends HttpServlet {
             HttpSession session = request.getSession();//gọi session
             session.setAttribute("acc", a);
             session.setMaxInactiveInterval(5000);
-            
-//            Cookie cu = new Cookie("user", userName);
-//            Cookie cp = new Cookie("pass", passWord);
-//            Cookie cr = new Cookie("rem", r);
-//            
-//            //tao thoi gian song
-//            if(r==null){
-//                cu.setMaxAge(0);
-//                cp.setMaxAge(0);
-//                cr.setMaxAge(0);
-//            }else{
-//                cu.setMaxAge(24*60*60);
-//                cp.setMaxAge(24*60*60);
-//                cr.setMaxAge(24*60*60);
-//            }
-//            response.addCookie(cu);
-//            response.addCookie(cp);
-//            response.addCookie(cr);
-            
+                    
             request.getRequestDispatcher("home").forward(request, response);
         }
             

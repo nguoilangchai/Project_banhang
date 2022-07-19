@@ -1,5 +1,5 @@
 const btn = document.querySelectorAll("#add-to-cart");
-//console.log(btn);
+console.log(btn);
 
 //alert("hello 2");
 function TaoDoiTuongSP(hinhAnh, ten, gia, id, soLuong) {
@@ -24,8 +24,8 @@ button.addEventListener("click", function (event) {
 
 var btnItem = event.target;
         var product = btnItem.parentElement;
-//
-//        // 1. Truy cập các node để lấy dữ liệu
+        
+//        //  Truy cập các node để lấy dữ liệu
         var productImg = product.querySelector("img").src;
         var productName = product.querySelector("h4>a>h4").innerText;
 //
@@ -33,7 +33,8 @@ var btnItem = event.target;
         var productId = product.querySelector("h1").innerText;
 //        alert('Sản phẩm có id là : ' + productId);
         var userId = product.querySelector("h2").innerText;
-        // Bước 4: Nếu sản phẩm đã tồn tại trong giỏ hàng thì thông báo sản phẩm đã có trong giỏ hàng
+        //Nếu sản phẩm đã tồn tại trong giỏ hàng thì thông báo sản 
+        //phẩm đã có trong giỏ hàng
 
         var userIDGioHang = 'userID' + userId;
 //        var userIDGioHang = '13';   
@@ -53,28 +54,22 @@ var btnItem = event.target;
         }
 
 
-// Bước 5: Nếu không tồn tại, tạo ra đối tượng và thêm vào danh sách item giỏ hàng
+// Nếu không tồn tại, tạo ra đối tượng và thêm vào danh sách item giỏ hàng
         if (coTonTaiTrongDanhSachItemGioHang === false) {
             var itemGioHang = TaoDoiTuongSP(productImg, productName, productPrice, productId, 1);
             danhSachSanPham.push(itemGioHang);
         }
 
 
-//
-//        //3. Đưa sản phẩm vào danh sách
-//        danhSachSanPham.push(sanPham);
-//        console.log(danhSachSanPham);
 
 //chuyển mảng đối tượng thành mảng JSON
 var tempJson = JSON.stringify(danhSachSanPham);
 //        console.log(tempJson);
 
-        // 4. Lưu trữ danh sách sản phẩm xuống local storage
+        //  Lưu trữ danh sách sản phẩm xuống local storage
         var x = 'userID' + 
         localStorage.setItem(userIDGioHang, tempJson); 
         alert('Thêm sản phẩm thành công!');
-        danhSachItemGioHang.push(sanPham);
-//        console.log(danhSachItemGioHang);
 });
         });
 
