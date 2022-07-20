@@ -392,7 +392,7 @@ public class DAO {
 
     public void updateNewPass(String newPass, int id) {
         String query = "UPDATE Account SET pass=? WHERE userID = ?";
-        
+
         try {
             conn = new DBContext().getConnection();
             ps = conn.prepareStatement(query);
@@ -402,7 +402,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    
+
     public void insertIdUser(int id) {
         String query = "INSERT INTO InfoUser(idUser) VALUES (?)";
 
@@ -464,7 +464,7 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    
+
     public UserInfo getUserInfoByID(int id) {
         String query = "SELECT * FROM InfoUser WHERE idUser = ?";
         try {
@@ -503,10 +503,10 @@ public class DAO {
 
     public List<ThongTinGiaoDich> getInfoSaleByIDProduct(String userID) {
         List<ThongTinGiaoDich> list = new ArrayList<>();
-        String query = "SELECT t.ngay, t.idUser, i.fullName, t.idSanPham, p.name, t.soLuongMua, p.price, t.soLuongMua*p.price as[money] FROM ThanhToan t INNER JOIN InfoUser i\n" +
-"ON t.idUser = i.idUser INNER JOIN Products p \n" +
-"ON p.id = t.idSanPham \n" +
-"WHERE p.sell_ID = ?";
+        String query = "SELECT t.ngay, t.idUser, i.fullName, t.idSanPham, p.name, t.soLuongMua, p.price, t.soLuongMua*p.price as[money] FROM ThanhToan t INNER JOIN InfoUser i\n"
+                + "ON t.idUser = i.idUser INNER JOIN Products p \n"
+                + "ON p.id = t.idSanPham \n"
+                + "WHERE p.sell_ID = ?";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);
@@ -530,7 +530,7 @@ public class DAO {
         }
         return list;
     }
-    
+
     public void deleteItem(String pid, String userID) {
         String query = "DELETE FROM ThanhToan WHERE idSanPham = ? AND idUser = ?";
         try {
@@ -543,18 +543,72 @@ public class DAO {
         } catch (Exception e) {
         }
     }
-    
-    public String traVeNgay(){
+
+    public String traVeNgay() {
         LocalDate localDate = LocalDate.now();
         int d = localDate.getDayOfMonth();
         int m = localDate.getMonth().getValue();
         int y = localDate.getYear();
         return Integer.toString(d) + "-" + Integer.toString(m) + "-" + Integer.toString(y);
     }
-    
+
+    public void addCategory(String name) {
+        String query = "INSERT INTO Categories VALUES (?)";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+        }
+    }
+
+    public void deleteCategory(String cid) {
+        String query = "DELETE FROM Categories WHERE cid = ?";
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+        }
+    }
+
+    public Category getCategoryByCID(String cid) {
+        String query = "SELECT * FROM Categories WHERE cid = ?";
+        try {
+            conn = new DBContext().getConnection();//mo ket noi voi sql
+            ps = conn.prepareStatement(query);
+            ps.setString(1, cid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return new Category(rs.getInt(1),
+                        rs.getString(2)
+                );
+            }
+        } catch (Exception e) {
+        }
+        return null;
+    }
+
+    public void updateCategory(String cid, String name) {
+        String query = "UPDATE Categories SET cname = ? WHERE cid = ?";
+
+        try {
+            conn = new DBContext().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, name);
+            ps.setString(2, cid);
+  
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+        }
+    }
     public static void main(String[] args) {
         DAO dao = new DAO();
-
+        
 //        Account a = dao.getAccount("nam", "nam1234");
 //        if(a==null)
 //            System.out.println("Không tồn tại");
@@ -597,17 +651,12 @@ public class DAO {
 //            dao.updateInfoUser(13,"Nguyễn Văn Nam 2","Phú Yên","0372394603","link anh");
 //            String x = dao.getUserInfoByID(13).toString();
 //            System.out.println(x);
-
 //        List<ThongTinGiaoDich> list = dao.getInfoSaleByIDProduct("13");
 //        for (ThongTinGiaoDich x : list) {
 //            System.out.println(x.toString());
 //        }
-
 //            dao.deleteItem(id, tempPid);
-
 //        dao.updateNewPass("20", 36);
-        
-
     }
 
 }
