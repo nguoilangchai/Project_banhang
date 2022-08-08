@@ -272,7 +272,7 @@ public class DAO {
 
     public List<Account> getAllAccount() {
         List<Account> list = new ArrayList<>();
-        String query = "SELECT * FROM Account";
+        String query = "SELECT * FROM Account WHERE isAdmin = 0";
         try {
             conn = new DBContext().getConnection();//mo ket noi voi sql
             ps = conn.prepareStatement(query);

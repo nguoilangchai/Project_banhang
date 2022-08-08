@@ -25,10 +25,10 @@
                             <div class="box box-info">
                                 <div class="box-body">
                                     <div class="col-sm-6">                 
-                                            <div align="center"> <img alt=""                                                              
-                                                                      src="${userInfo.image}"
-                                                                      id="profile-image1" class="img-circle img-responsive">
-                                            </div>
+                                        <div align="center"> <img alt=""                                                              
+                                                                  src="${userInfo.image}"
+                                                                  id="profile-image1" class="img-circle img-responsive">
+                                        </div>
                                         <br>
                                     </div>
                                     <div class="col-sm-6">
@@ -44,12 +44,12 @@
                                             Fill full the information</h1>
                                         <h5>UserID : ${sessionScope.acc.getId()}</h5>
                                         <input name="fullname" type="text" id="user-name" class="form-control"
-                                               value="${userInfo.fullName}" placeholder="Input full name" required="" autofocus="">
+                                               value="${userInfo.fullName}" placeholder="Input full name" required="" autofocus="" onchange="checkName()">
                                         <input name="address" type="text" id="user-pass" class="form-control"
                                                value="${userInfo.address}" placeholder="Input address" required autofocus="">
-                                        <input name="mobile" type="text" id="user-repeatpass" class="form-control"
-                                               value="${userInfo.mobile}" placeholder="Input mobile" required autofocus="">
-                                        <input name="linkImage" type="text" id="user-repeatpass" class="form-control"
+                                        <input name="mobile" type="text" id="sdt" class="form-control"
+                                               value="${userInfo.mobile}" placeholder="Input mobile" required autofocus="" onchange="checkSDT()">
+                                        <input name="linkImage" type="text" id="image" class="form-control"
                                                value="${userInfo.image}" placeholder="Input link image" required autofocus="">
 
                                         <button class="btn btn-primary btn-block" type="submit"><i
@@ -62,5 +62,7 @@
                             </div>
                         </div>
                     </div>
+                    <script src="js/XuLyForm.js"></script>
                     </body>
                     </html>
+                    
