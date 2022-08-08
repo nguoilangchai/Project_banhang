@@ -11,11 +11,6 @@
 ![home-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/Home.PNG)
 <space><space>
 
-- InfoUser-image :
-<space><space>
-![InfoUser-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/InfoUser.PNG)
-<space><space>
-
 - ManageProduct-image :
 <space><space>
 ![ManageProduct-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ManageProduct.PNG)
@@ -39,4 +34,9 @@
 - ManageOrder-image :
 <space><space>
 ![ManageOrder-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ManageOrder.PNG)
+<space><space>
+
+- InfoUser-image :
+<space><space>
+![InfoUser-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/InfoUser.PNG)
 <space><space>
