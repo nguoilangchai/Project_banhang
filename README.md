@@ -6,26 +6,36 @@
 * ...
 
 ### Screen shot:
-- Welcome-image :
-
-![welcome-image](https://github.com/nguoilangchai/Challenge_w1/blob/main/images/welcome.jpg)
+- Home-image :
+![home-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/Home.PNG)
 <space><space>
 
-- Onboarding one-image :
+- InfoUser-image :
 <space><space>
-![Onboarding one-image](https://github.com/nguoilangchai/Challenge_w1/blob/main/images/Onboarding_one.png)
-<space><space>
-
-- SignUp-image :
-<space><space>
-![SignUp-image](https://github.com/nguoilangchai/Challenge_w1/blob/main/images/sign_up.png)
+![InfoUser-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/InfoUser.PNG)
 <space><space>
 
-- Login-image :
+- ManageProduct-image :
 <space><space>
-![Login-image](https://github.com/nguoilangchai/Challenge_w1/blob/main/images/login.png)
+![ManageProduct-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ManageProduct.PNG)
 <space><space>
 
-- Vertification Code-image :
+- ManageCategory-image :
 <space><space>
-![VertificationCode-image](https://github.com/nguoilangchai/Challenge_w1/blob/main/images/VerificationCode.jpg)
+![ManageCategory-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ManageCategory.PNG)
+<space><space>
+
+- ManageAccount-image :
+<space><space>
+![ManageAccount-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ManageAccount.PNG)
+<space><space>
+
+- ShoppingCart-image :
+<space><space>
+![ShoppingCart-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ShoppingCart.PNG)
+<space><space>
+
+- ManageOrder-image :
+<space><space>
+![ManageOrder-image](https://github.com/nguoilangchai/Project_banhang/blob/main/images/ManageOrder.PNG)
+<space><space>
